@@ -30,11 +30,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Install ruff
+        run: |
+          pip install ruff==0.8.1
+
       - name: Run ruff linter
         run: |
-          ruff check .  # <-- Cambiado de "ruff check requirements.txt"
+          ruff check .
 
       - name: Run tests
         run: |
           pytest tests.py
-      
