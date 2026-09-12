@@ -29,9 +29,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Check linting
-        working-directory: .github/workflows
-        run: ruff check requirements.txt
+
+      - name: Run ruff linter
+        run: |
+          ruff check .  # <-- Cambiado de "ruff check requirements.txt"
 
       - name: Run tests
         run: |
